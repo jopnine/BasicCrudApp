@@ -25,7 +25,7 @@ namespace BasicCrudApp
 
         private void FrmLogin_Load(object sender, EventArgs e)
         {
-            
+            populateFields();   
         }
 
         private Boolean validateFields()
@@ -34,7 +34,8 @@ namespace BasicCrudApp
             {
                 if (String.IsNullOrEmpty(fields[i].Text))
                 {
-                    MessageBox.Show("All fields must me filled");
+                    //MessageBox.Show("All fields must me filled");
+                    MessageBox.Show($"The field {fields[i].Tag.ToString()} must be filled!", "Alert", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     return false; 
                 }
             }
@@ -45,7 +46,10 @@ namespace BasicCrudApp
         {
             try
             {
-
+                if (validateFields())
+                {
+                    MessageBox.Show("Login sucessful");
+                }
             }
             catch (Exception ex)
             {
@@ -56,6 +60,18 @@ namespace BasicCrudApp
             //{
             //    MessageBox.Show("Test");
             //}
+        }
+
+        private void TxtUser_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+          //  this.Hide(); // Hide the initial Form
+            FrmSettings frmsettings = new FrmSettings();
+            frmsettings.ShowDialog();
         }
     }
 }

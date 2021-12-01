@@ -33,7 +33,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.BtnLogin = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // TxtPassword
@@ -42,14 +42,17 @@
             this.TxtPassword.Name = "TxtPassword";
             this.TxtPassword.PasswordChar = '*';
             this.TxtPassword.Size = new System.Drawing.Size(100, 20);
-            this.TxtPassword.TabIndex = 0;
+            this.TxtPassword.TabIndex = 1;
+            this.TxtPassword.Tag = "Password";
             // 
             // TxtUser
             // 
             this.TxtUser.Location = new System.Drawing.Point(106, 9);
             this.TxtUser.Name = "TxtUser";
             this.TxtUser.Size = new System.Drawing.Size(100, 20);
-            this.TxtUser.TabIndex = 1;
+            this.TxtUser.TabIndex = 0;
+            this.TxtUser.Tag = "User";
+            this.TxtUser.TextChanged += new System.EventHandler(this.TxtUser_TextChanged);
             // 
             // label1
             // 
@@ -73,22 +76,25 @@
             // 
             // button1
             // 
+            this.button1.Font = new System.Drawing.Font("MS Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.Location = new System.Drawing.Point(12, 70);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(88, 32);
-            this.button1.TabIndex = 4;
+            this.button1.TabIndex = 3;
             this.button1.Text = "Settings";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // button2
+            // BtnLogin
             // 
-            this.button2.Location = new System.Drawing.Point(114, 70);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(88, 32);
-            this.button2.TabIndex = 4;
-            this.button2.Text = "Login";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.BtnLogin.Font = new System.Drawing.Font("MS Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnLogin.Location = new System.Drawing.Point(114, 70);
+            this.BtnLogin.Name = "BtnLogin";
+            this.BtnLogin.Size = new System.Drawing.Size(88, 32);
+            this.BtnLogin.TabIndex = 2;
+            this.BtnLogin.Text = "Login";
+            this.BtnLogin.UseVisualStyleBackColor = true;
+            this.BtnLogin.Click += new System.EventHandler(this.button2_Click);
             // 
             // FrmLogin
             // 
@@ -96,7 +102,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(214, 108);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.BtnLogin);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -121,7 +127,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button BtnLogin;
     }
 }
 
